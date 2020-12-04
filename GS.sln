@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3746C9A4-BA54-4806-B04B-71461E9228A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS", "src\GS\GS.csproj", "{71E21C0B-D70E-4EC2-B1C4-60326DCE60A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS", "src\GS\GS.csproj", "{71E21C0B-D70E-4EC2-B1C4-60326DCE60A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GMall", "GMall", "{FFC68F14-D8BE-4B01-A671-4CBBDBCA52BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{886D90EF-CF21-481A-B3F5-1EB2657906D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMall.Order.Domain", "src\GMall\Order\GMall.Order.Domain\GMall.Order.Domain.csproj", "{41B12C82-B0FA-46B0-9914-D32B84F0D32F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GMall.Order.Domain", "src\GMall\Order\GMall.Order.Domain\GMall.Order.Domain.csproj", "{41B12C82-B0FA-46B0-9914-D32B84F0D32F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMall.Order.Application", "src\GMall\Order\GMall.Order.Application\GMall.Order.Application.csproj", "{001A49F2-782B-463F-9871-91331C2E2458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{41B12C82-B0FA-46B0-9914-D32B84F0D32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41B12C82-B0FA-46B0-9914-D32B84F0D32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41B12C82-B0FA-46B0-9914-D32B84F0D32F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{001A49F2-782B-463F-9871-91331C2E2458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001A49F2-782B-463F-9871-91331C2E2458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001A49F2-782B-463F-9871-91331C2E2458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001A49F2-782B-463F-9871-91331C2E2458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 		{FFC68F14-D8BE-4B01-A671-4CBBDBCA52BF} = {3746C9A4-BA54-4806-B04B-71461E9228A9}
 		{886D90EF-CF21-481A-B3F5-1EB2657906D4} = {FFC68F14-D8BE-4B01-A671-4CBBDBCA52BF}
 		{41B12C82-B0FA-46B0-9914-D32B84F0D32F} = {886D90EF-CF21-481A-B3F5-1EB2657906D4}
+		{001A49F2-782B-463F-9871-91331C2E2458} = {886D90EF-CF21-481A-B3F5-1EB2657906D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF5E5038-4533-4DAD-9A70-0EC6204ED7F3}
