@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GS.Domain
 {
-    interface IValueObject
+    public interface IValueObject
     {
     }
 }

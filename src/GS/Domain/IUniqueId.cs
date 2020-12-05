@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GMall.Order.Application
+namespace GS.Domain
 {
-    class OrderApplicationService
+    public interface IUniqueId
     {
     }
 }

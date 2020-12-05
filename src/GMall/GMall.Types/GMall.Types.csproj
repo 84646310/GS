@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\GMall.Order.Domain\GMall.Order.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

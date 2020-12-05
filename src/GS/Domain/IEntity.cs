@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GS.Domain
 {
-    interface IEntity
+    public interface IEntity
     {
     }
 }
