@@ -9,4 +9,8 @@
     <ProjectReference Include="..\..\GMall.Types\GMall.Types.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Products\Services\" />
+  </ItemGroup>
+
 </Project>

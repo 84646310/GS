@@ -79,7 +79,7 @@ namespace GMall.Product.Domain.Products
                     var tempSpecifications = new List<Specification>();
                     foreach (var item in resultProperties)
                     {
-                        tempSpecifications.Add(new Specification(new SpecificationId(), item));
+                        tempSpecifications.Add(new Specification(new SpecificationId(), item, new Money(100)));
                     }
                     Specifications = tempSpecifications;
                 }
