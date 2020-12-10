@@ -1,15 +1,17 @@
-﻿using System;
+﻿using GS.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GMall.Types
 {
-    public class PropertyValueId
+    public class PropertyValueId : LongGuid
     {
-        public long Value { get; private set; }
-        public PropertyValueId(long aValue)
+        public PropertyValueId()
         {
-            Value = aValue;
+        }
+        public PropertyValueId(long aValue) : base(aValue)
+        {
         }
     }
 }

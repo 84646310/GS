@@ -1,15 +1,18 @@
-﻿using System;
+﻿using GS.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GMall.Types
 {
-    public class PictureId
+    public class PictureId : LongGuid
     {
-        public long Value { get; private set; }
-        public PictureId(long aValue)
+        public PictureId()
         {
-            Value = aValue;
+
+        }
+        public PictureId(long aValue) : base(aValue)
+        { 
         }
     }
 }

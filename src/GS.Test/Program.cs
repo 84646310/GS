@@ -1,6 +1,4 @@
-﻿using GMall.Product.Domain.Products;
-using System;
-using System.Collections.Generic;
+﻿using System;
 
 namespace GS.Test
 {
@@ -10,52 +8,52 @@ namespace GS.Test
         {
             //Product p = new Product(new GMall.Types.ProductId(1));
             //p.CreateSpecification();
+
+            var id = new ProductId();
+
+            Console.WriteLine("***********");
+            var id2 = new ProductId("2");
+            var ss = id.ToString();
+
+            Console.ReadLine();
+
         }
-        //static void Main(string[] args)
-        //{
-        //    string[] str1 = { "a", "b" };
-        //    string[] str2 = { "1" };
-        //    string[] str3 = { "一", "二", "三" };
-        //    string[] str4 = { "4", "5", "6" };
-        //    string[] str5 = { "7", "8" };
-        //    string[] str6 = { "9", "+", "-" };
-        //    List<string[]> list = new List<string[]>();
-        //    list.Add(str1);
-        //    list.Add(str2);
-        //    list.Add(str3);
-        //    list.Add(str4);
-        //    list.Add(str5);
-        //    list.Add(str6);
-        //    List<string> result = new List<string>();
-        //    Descartes(list, 0, result, string.Empty);
-        //    foreach (var item in result)
-        //    {
-        //        Console.WriteLine(item);
-        //    }
-
-        //    Console.WriteLine("Hello World!");
-        //}
-
-
-        //private static void Descartes(List<string[]> list, int count, List<string> result, string data)
-        //{
-
-        //    // 获取当前数组
-        //    string[] curr = list[count];
-        //    foreach (var item in curr)
-        //    {
-        //        if (count + 1 < list.Count)
-        //        {
-        //            // 跳至下一层
-        //            Descartes(list, count + 1, result, data + item);
-        //        }
-        //        else
-        //        {
-        //            // 达到最底层时将拼接的值存入结果列表中
-        //            result.Add(data + item);
-        //        }
-        //    }
-
-        //}
+        
+    }
+    public class ProductId : StringGuid
+    {
+        public ProductId():base()
+        {
+            Console.WriteLine("ProductId-无参-构造函数");
+        }
+        public ProductId(string aValue)
+        {
+            Console.WriteLine("ProductId-有参-构造函数");
+            Value = aValue;
+        }
+    }
+    public abstract class StringGuid 
+    {
+        protected string Value { get; set; }
+        public StringGuid()
+        {
+            Console.WriteLine("StringGuid-无参-构造函数");
+            Value = CreateGuid();
+        }
+        public StringGuid(string aValue)
+        {
+            Console.WriteLine("StringGuid-有参-构造函数");
+            Value = aValue;
+        }
+        private string CreateGuid()
+        {
+            Console.WriteLine("CreateGuid");
+            long i = 1;
+            foreach (byte b in Guid.NewGuid().ToByteArray())
+            {
+                i *= ((int)b + 1);
+            }
+            return string.Format("{0:x}", i - DateTime.Now.Ticks);
+        }
     }
 }

@@ -1,15 +1,18 @@
-﻿using System;
+﻿using GS.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GMall.Types
 {
-    public class CategoryId
+    public class CategoryId : LongGuid
     {
-        public long Value { get; private set; }
-        public CategoryId(long aValue)
+        public CategoryId()
         {
-            Value = aValue;
+
+        }
+        public CategoryId(long aValue):base(aValue)
+        { 
         }
     }
 }

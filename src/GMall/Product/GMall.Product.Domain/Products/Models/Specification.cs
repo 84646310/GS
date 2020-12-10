@@ -6,11 +6,11 @@ using System.Text;
 
 namespace GMall.Product.Domain.Products
 {
-    public class Specification : Entity<int>
+    public class Specification : Entity<SpecificationId>
     {
         public ICollection<KeyValuePair<PropertyId, PropertyValueId>> Properties { get; private set; }
-        private string PropertyJson { get; set; }
-        public Specification(int aId, ICollection<KeyValuePair<PropertyId, PropertyValueId>> aProperties) : base(aId)
+        private string JsonString { get; set; }
+        public Specification(SpecificationId aId, ICollection<KeyValuePair<PropertyId, PropertyValueId>> aProperties) : base(aId)
         {
             Properties = aProperties;
             ConvertToJson();
@@ -31,14 +31,14 @@ namespace GMall.Product.Domain.Products
                 }
                 sb.Remove(sb.Length - 1, 1);
                 sb.Append("]");
-                PropertyJson = sb.ToString();
-                return PropertyJson;
+                JsonString = sb.ToString();
+                return JsonString;
             }
             return "";
         }
         public string ToJson()
         {
-            return PropertyJson;
+            return JsonString;
         }
     }
 }

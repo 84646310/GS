@@ -1,15 +1,17 @@
-﻿using System;
+﻿using GS.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GMall.Types
 {
-    public class BrandId
+    public class BrandId : LongGuid
     {
-        public long Value { get; private set; }
-        public BrandId(long aValue)
+        public BrandId()
+        { 
+        }
+        public BrandId(long aValue) : base(aValue)
         {
-            Value = aValue;
         }
     }
 }

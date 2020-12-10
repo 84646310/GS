@@ -1,11 +1,14 @@
-﻿namespace GMall.Types
+﻿using GS.Domain;
+
+namespace GMall.Types
 {
-    public class AfsOrderId
+    public class AfsOrderId : LongGuid
     {
-        public long Value { get; private set; }
-        public AfsOrderId(long aValue)
+        public AfsOrderId()
         {
-            Value = aValue;
+        }
+        public AfsOrderId(long aValue) : base(aValue)
+        {
         }
     }
 }

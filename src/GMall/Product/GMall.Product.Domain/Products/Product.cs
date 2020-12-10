@@ -9,15 +9,15 @@ namespace GMall.Product.Domain.Products
     public class Product : AggregateRoot<ProductId>
     {
         public string Name { get; private set; }
-        public string ModelCode { get; private set; }
         public string Description { get; private set; }
+        public Money MinPrice { get; private set; }
+        public Money MaxPrice { get; private set; }
         public BrandId BrandId { get; private set; }
         public CategoryId CategoryId { get; private set; }
         public IList<SaleProperty> SaleProperties { get; private set; }
         public IList<CustomProperty> CustomProperties { get; private set; }
         public IList<Specification> Specifications { get; private set; }
         public Product(ProductId aId,
-            string aModelCode,
             string aDescription,
             BrandId aBrandId,
             CategoryId aCategoryId,
@@ -25,19 +25,17 @@ namespace GMall.Product.Domain.Products
             IList<CustomProperty> aCustomProperties
             ) : base(aId)
         {
-            ModelCode = aModelCode;
             Description = aDescription;
             BrandId = aBrandId;
             CategoryId = aCategoryId;
             SaleProperties = aSaleProperties;
             CustomProperties = aCustomProperties;
+
+            CreateSpecification();
         }
         public Product(ProductId aId) : base(aId)
         {
-        }
-        private void CreateSpecification()
-        {
-            var sourceSaleProperty = new List<SaleProperty>()
+            var saleProperties = new List<SaleProperty>()
             {
                 new SaleProperty(new PropertyId(1), new List<PropertyValueId>()
                 {
@@ -64,30 +62,42 @@ namespace GMall.Product.Domain.Products
                      new PropertyValueId(43)
                 }),
             };
-            var resultSpecification = new List<Specification>();
-            var listProperties = new List<KeyValuePair<PropertyId, PropertyValueId>>();
-            int index = 0;
-            this.Cartesian(sourceSaleProperty, index, resultSpecification, listProperties);
-            Specifications = new List<Specification>(resultSpecification);
         }
-
-        private void Cartesian(IList<SaleProperty> sourceSaleProperty, int aIndex, IList<Specification> resultSpecification, IList<KeyValuePair<PropertyId, PropertyValueId>> resultProperties)
+        /// <summary>
+        /// 根据销售属性生成产品规格
+        /// </summary>
+        private void CreateSpecification()
         {
-            var propertyId = sourceSaleProperty[aIndex].PropertyId;
-            IList<PropertyValueId> propertyValueIds = sourceSaleProperty[aIndex].PropertyValueIds;
+            if (SaleProperties.Count > 0)
+            {
+                int index = 0;
+                var tempProperties = new List<KeyValuePair<PropertyId, PropertyValueId>>();
+                var resultProperties = new List<IList<KeyValuePair<PropertyId, PropertyValueId>>>();
+                this.Cartesian(SaleProperties, index, resultProperties, tempProperties);
+                if (resultProperties.Count > 0)
+                {
+                    var tempSpecifications = new List<Specification>();
+                    foreach (var item in resultProperties)
+                    {
+                        tempSpecifications.Add(new Specification(new SpecificationId(), item));
+                    }
+                    Specifications = tempSpecifications;
+                }
+            }
+        }
+        private void Cartesian(IList<SaleProperty> source, int aIndex, IList<IList<KeyValuePair<PropertyId, PropertyValueId>>> result, IList<KeyValuePair<PropertyId, PropertyValueId>> resultItem)
+        {
+            var sourceItem = source[aIndex];
+            var propertyId = sourceItem.PropertyId;
+            var propertyValueIds = sourceItem.PropertyValueIds;
             foreach (var item in propertyValueIds)
             {
-                var tempProperties = new List<KeyValuePair<PropertyId, PropertyValueId>>(resultProperties);
+                var tempProperties = new List<KeyValuePair<PropertyId, PropertyValueId>>(resultItem);
                 tempProperties.Add(new KeyValuePair<PropertyId, PropertyValueId>(propertyId, item));
-                if (aIndex + 1 < sourceSaleProperty.Count)
-                {
-                    Cartesian(sourceSaleProperty, aIndex + 1, resultSpecification, tempProperties);
-                }
+                if (aIndex + 1 < source.Count)
+                    Cartesian(source, aIndex + 1, result, tempProperties);
                 else
-                {
-                    Specification data = new Specification(1, tempProperties);
-                    resultSpecification.Add(data);
-                }
+                    result.Add(tempProperties);
             }
         }
     }
