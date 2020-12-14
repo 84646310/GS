@@ -15,7 +15,7 @@ namespace GS.Domain
         //Task<TAggregateRootId> NextIdAsync();
         Task<TAggregateRoot> GetByIdAsync(TAggregateRootId aAggregateRootId);
         Task SaveAsync(TAggregateRoot aAggregateRoot);
-        Task SaveAsync(IEnumerable<TAggregateRoot> aAggregateRoot);
+        Task SaveAsync(IList<TAggregateRoot> aAggregateRoot);
         //Task SaveAllAsync(ICollection<TAggregateRoot> aAggregateRootCollection);
         //Task Remove(TAggregateRoot aAggregateRoot);
         //Task RemoveAll(ICollection<TAggregateRoot> aAggregateRootCollection);

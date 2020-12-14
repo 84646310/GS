@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Categories\" />
+    <Folder Include="Pictures\" />
+    <Folder Include="Products\" />
+    <Folder Include="ProductSkus\" />
+    <Folder Include="Propertys\" />
+    <Folder Include="PropertyValues\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GMall.EFCore\GMall.EFCore.csproj" />
+    <ProjectReference Include="..\GMall.Product.Domain\GMall.Product.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -28,7 +28,7 @@ namespace GMall.Order.Infrastructure
             throw new System.NotImplementedException();
         }
 
-        public Task SaveAsync(IEnumerable<Domain.Orders.Order> aAggregateRoot)
+        public Task SaveAsync(IList<Domain.Orders.Order> aAggregateRoot)
         {
             throw new System.NotImplementedException();
         }

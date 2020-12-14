@@ -9,11 +9,12 @@ namespace GS.Test
             //Product p = new Product(new GMall.Types.ProductId(1));
             //p.CreateSpecification();
 
-            var id = new ProductId();
+            //var id = new ProductId();
 
-            Console.WriteLine("***********");
-            var id2 = new ProductId("2");
-            var ss = id.ToString();
+            //Console.WriteLine("***********");
+            //var id2 = new ProductId("2");
+            //var ss = id.ToString();
+             
 
             Console.ReadLine();
 

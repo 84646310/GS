@@ -10,7 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Categories\Repositories\" />
+    <Folder Include="Pictures\Repositories\" />
     <Folder Include="Products\Services\" />
+    <Folder Include="Propertys\Repositories\" />
+    <Folder Include="PropertyValues\Repositories\" />
   </ItemGroup>
 
 </Project>
