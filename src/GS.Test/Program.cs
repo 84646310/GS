@@ -14,16 +14,20 @@ namespace GS.Test
             //Console.WriteLine("***********");
             //var id2 = new ProductId("2");
             //var ss = id.ToString();
-             
+            var s1 = 3;
+            var s2 = 10;
+            decimal s3 = Convert.ToDecimal(s1) / s2;
 
+            var initDate = new DateTime(2020, 1, 1);
+            Console.WriteLine(s3);
             Console.ReadLine();
 
         }
-        
+
     }
     public class ProductId : StringGuid
     {
-        public ProductId():base()
+        public ProductId() : base()
         {
             Console.WriteLine("ProductId-无参-构造函数");
         }
@@ -33,7 +37,7 @@ namespace GS.Test
             Value = aValue;
         }
     }
-    public abstract class StringGuid 
+    public abstract class StringGuid
     {
         protected string Value { get; set; }
         public StringGuid()

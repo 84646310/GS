@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>c40c5ca5-3af8-416a-aada-59abb45a3162</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +11,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Product\GMall.Product.Application\GMall.Product.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 
