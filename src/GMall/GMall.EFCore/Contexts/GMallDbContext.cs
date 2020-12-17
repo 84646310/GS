@@ -6,13 +6,10 @@ namespace GMall.EFCore
     {
         public GMallDbContext()
         {
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
         }
-        public DbSet<TbBrand> TbBrand { get; set; }
-        public DbSet<TbCategory> TbCategory { get; set; }
-        public DbSet<TbPicture> TbPicture { get; set; }
-        public DbSet<TbProduct> TbProduct { get; set; }
-        public DbSet<TbProductSku> TbProductSku { get; set; }
+        public DbSet<BrandDO> BrandDO { get; set; }
+        public DbSet<BrandPictureDO> BrandPictureDO { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -22,11 +19,8 @@ namespace GMall.EFCore
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new TbBrandMapping());
-            modelBuilder.ApplyConfiguration(new TbCategoryMapping());
-            modelBuilder.ApplyConfiguration(new TbPictureMapping());
-            modelBuilder.ApplyConfiguration(new TbProductMapping());
-            modelBuilder.ApplyConfiguration(new TbProductSkuMapping());
+            modelBuilder.ApplyConfiguration(new BrandDOMapping());
+            modelBuilder.ApplyConfiguration(new BrandPictureDOMapping());
         }
     }
 }

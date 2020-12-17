@@ -8,16 +8,38 @@ namespace GMall.Product.Domain.Categories
 {
     public class Category : AggregateRoot<CategoryId>
     {
-        public CategoryId ParentId { get; private set; }
-        public string Name { get; private set; }
-        public ICollection<PictureId> PictureIds { get; private set; }
+        public CategoryInfo Info { get; private set; }
+        public ICollection<Picture> Pictures { get; private set; }
         public ICollection<PropertyInfo> PropertyInfos { get; private set; }
-        public Category(CategoryId aId, CategoryId aParentId, string aName, ICollection<PictureId> aPictureIds, ICollection<PropertyInfo> aPropertyInfos) : base(aId)
+        public int Sort { get; private set; }
+        public bool Active { get; private set; }
+        public Category(CategoryId aId, CategoryInfo aInfo, ICollection<Picture> aPictures, ICollection<PropertyInfo> aPropertyInfos, int aSort, bool aActive) : base(aId)
         {
-            ParentId = aParentId;
-            Name = aName;
-            PictureIds = aPictureIds;
+            Info = aInfo;
+            Pictures = aPictures;
             PropertyInfos = aPropertyInfos;
+            Sort = aSort;
+            Active = aActive;
+        }
+        public void Update(CategoryInfo aInfo)
+        {
+            Info = aInfo;
+        }
+        public void UpdatePictures(ICollection<Picture> aPictures)
+        {
+            Pictures = aPictures;
+        }
+        public void UpdateSort(int aSort)
+        {
+            Sort = aSort;
+        }
+        public void Activate()
+        {
+            Active = true;
+        }
+        public void Deactivate()
+        {
+            Active = false;
         }
     }
 }

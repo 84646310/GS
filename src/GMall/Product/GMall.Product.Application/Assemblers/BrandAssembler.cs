@@ -11,15 +11,18 @@ namespace GMall.Product.Application
         {
             var result = new BrandDTO()
             {
-                Id = aBrand.Id.Value,
-                Name = aBrand.Name
+                Id = aBrand.Id.Value
             };
             return result;
         }
 
         public Brand ToEntity(BrandDTO aBrandDTO)
         {
-            var result = new Brand(new Types.BrandId(), aBrandDTO.Name, new Logo(new Types.PictureId(1)));
+            var result = new Brand(new Types.BrandId(aBrandDTO.Id)
+                , null
+                , null
+                , 0
+                , true);
             return result;
         }
     }

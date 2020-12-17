@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GS.Application
 {
-    interface IDataTransferObject
+    public interface IDataTransferObject
     {
     }
 }

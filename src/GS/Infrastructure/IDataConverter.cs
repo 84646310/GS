@@ -5,6 +5,6 @@ using System.Text;
 namespace GS.Infrastructure
 {
     public interface IDataConverter
-    {
+    { 
     }
 }

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace GMall.Product.Domain.Products
 {
-    public class SaleProperty
+    public class SalePropertyInfo
     {
         public PropertyId PropertyId { get; private set; }
-        public IList<PropertyValueId> PropertyValueIds { get; private set; }
-        public SaleProperty(PropertyId aPropertyId, IList<PropertyValueId> aPropertyValueIds)
+        public ICollection<PropertyValueId> PropertyValueIds { get; private set; }
+        public SalePropertyInfo(PropertyId aPropertyId, ICollection<PropertyValueId> aPropertyValueIds)
         {
             PropertyId = aPropertyId;
             PropertyValueIds = aPropertyValueIds;

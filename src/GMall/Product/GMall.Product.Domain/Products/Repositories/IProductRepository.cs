@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GMall.Product.Domain.Products.Repositories
 {
-    public interface IProductRepository:IRepository<Product,ProductId>
+    public interface IProductRepository : IRepository<Product, ProductId>
     {
     }
 }

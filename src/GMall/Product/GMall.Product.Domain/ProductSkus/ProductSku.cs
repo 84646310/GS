@@ -8,15 +8,11 @@ namespace GMall.Product.Domain.ProductSkus
 {
     public class ProductSku : AggregateRoot<ProductSkuId>
     {
-        public ProductId ProductId { get; private set; }
-        public SpecificationId SpecificationId { get; private set; }
-        public Money Price { get; private set; }
+        public ProductSkuInfo Info { get; private set; }
         public Inventory Inventory { get; private set; }
-        public ProductSku(ProductSkuId aId, ProductId aProductId, SpecificationId aSpecificationId, Money aPrice, Inventory aInventory) : base(aId)
+        public ProductSku(ProductSkuId aId, ProductSkuInfo aInfo, Inventory aInventory) : base(aId)
         {
-            ProductId = aProductId;
-            SpecificationId = aSpecificationId;
-            Price = aPrice;
+            Info = aInfo;
             Inventory = aInventory;
         }
     }

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace GMall.Product.Domain.Products
 {
-    public class CustomProperty
+    public class CustomPropertyInfo
     {
         public PropertyId PropertyId { get; private set; }
         public string PropertyValue { get; private set; }
-        public CustomProperty(PropertyId aPropertyId, string aPropertyValue)
+        public CustomPropertyInfo(PropertyId aPropertyId, string aPropertyValue)
         {
             PropertyId = aPropertyId;
             PropertyValue = aPropertyValue;

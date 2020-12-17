@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace GS.Test
 {
@@ -19,6 +21,23 @@ namespace GS.Test
             decimal s3 = Convert.ToDecimal(s1) / s2;
 
             var initDate = new DateTime(2020, 1, 1);
+      
+            IEnumerable<int> e1;
+            ICollection c;
+            ICollection<int> c1 = null;
+            IList l;
+            IList<int> l1 = null;
+            
+            foreach (var item in c1)
+            {
+
+            }
+            
+            foreach (var item in l1)
+            {
+
+            }
+            IDictionary c3;
             Console.WriteLine(s3);
             Console.ReadLine();
 
