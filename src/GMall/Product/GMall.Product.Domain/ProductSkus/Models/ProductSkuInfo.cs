@@ -9,12 +9,14 @@ namespace GMall.Product.Domain.ProductSkus
     {
         public ProductId ProductId { get; private set; }
         public SpecificationId SpecificationId { get; private set; }
-        public Money UnitPrice { get; private set; }
-        public ProductSkuInfo(ProductId aProductId, SpecificationId aSpecificationId, Money aUnitPrice)  
+        public Money UnitPrice { get; private set; } 
+        public PictureId PictureId { get; private set; }
+        public ProductSkuInfo(ProductId aProductId, SpecificationId aSpecificationId, Money aUnitPrice, PictureId aPictureId)  
         {
             ProductId = aProductId;
             SpecificationId = aSpecificationId;
-            UnitPrice = aUnitPrice; 
+            UnitPrice = aUnitPrice;
+            PictureId = aPictureId;
         }
     }
 }

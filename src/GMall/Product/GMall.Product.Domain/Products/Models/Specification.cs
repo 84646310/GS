@@ -9,12 +9,10 @@ namespace GMall.Product.Domain.Products
     public class Specification : Entity<SpecificationId>
     {
         public ICollection<KeyValuePair<PropertyId, PropertyValueId>> Properties { get; private set; }
-        public Money UnitPrice { get; private set; }
         private string JsonString { get; set; }
-        public Specification(SpecificationId aId, ICollection<KeyValuePair<PropertyId, PropertyValueId>> aProperties, Money aUnitPrice) : base(aId)
+        public Specification(SpecificationId aId, ICollection<KeyValuePair<PropertyId, PropertyValueId>> aProperties) : base(aId)
         {
-            Properties = aProperties;
-            UnitPrice = aUnitPrice;
+            Properties = aProperties; 
         }
         public string ToJson()
         {

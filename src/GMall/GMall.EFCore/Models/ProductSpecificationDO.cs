@@ -8,7 +8,6 @@ namespace GMall.EFCore.Models
     {
         public long Id { get; set; }
         public long ProductId { get; set; }
-        public decimal UnitPrice { get; set; }
         public string PropertyString { get; set; }
     }
 }

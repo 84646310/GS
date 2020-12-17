@@ -9,18 +9,21 @@ namespace GMall.Product.Domain.Products
     public class Product : AggregateRoot<ProductId>
     {
         public ProductInfo Info { get; private set; }
+        public ICollection<Picture> Pictures { get; private set; }
         public ICollection<PropertyInfo> PropertyInfos { get; private set; }
         public ICollection<CustomPropertyInfo> CustomPropertyInfos { get; private set; }
         public IList<SalePropertyInfo> SalePropertyInfos { get; private set; }
         public ICollection<Specification> Specifications { get; private set; }
         public Product(ProductId aId,
             ProductInfo aInfo,
+            ICollection<Picture> aPictures,
             ICollection<PropertyInfo> aPropertyInfos,
             ICollection<CustomPropertyInfo> aCustomPropertyInfos,
             IList<SalePropertyInfo> aSalePropertyInfos
             ) : base(aId)
         {
             Info = aInfo;
+            Pictures = aPictures;
             PropertyInfos = aPropertyInfos;
             SalePropertyInfos = aSalePropertyInfos;
             CustomPropertyInfos = aCustomPropertyInfos; 
@@ -68,7 +71,7 @@ namespace GMall.Product.Domain.Products
                     var tempSpecifications = new List<Specification>();
                     foreach (var item in resultProperties)
                     {
-                        tempSpecifications.Add(new Specification(new SpecificationId(), item, new Money(100)));
+                        tempSpecifications.Add(new Specification(new SpecificationId(), item));
                     }
                     Specifications = tempSpecifications;
                 }

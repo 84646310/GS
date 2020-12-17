@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Products\Product.cs~RF1166e56e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\GS\GS.csproj" />
     <ProjectReference Include="..\..\GMall.Types\GMall.Types.csproj" />
   </ItemGroup>
