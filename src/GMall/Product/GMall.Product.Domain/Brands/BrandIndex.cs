@@ -7,11 +7,11 @@ namespace GMall.Product.Domain.Brands
 {
     public class BrandIndex
     {
-        public BrandId Id { get; private set; }
+        public BrandId UniqueId { get; private set; }
         public string Name { get; private set; }
-        public BrandIndex(BrandId aId,string aName)
+        public BrandIndex(BrandId aBrandId,string aName)
         {
-            Id = aId;
+            UniqueId = aBrandId;
             Name = aName;
         }
     }

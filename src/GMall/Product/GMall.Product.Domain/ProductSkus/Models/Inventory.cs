@@ -1,10 +1,11 @@
-﻿using System;
+﻿using GS.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GMall.Product.Domain.ProductSkus
 {
-    public class Inventory
+    public class Inventory : ValueObject
     {
         /// <summary>
         /// 可售库存(真实库存)

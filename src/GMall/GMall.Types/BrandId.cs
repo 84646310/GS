@@ -7,11 +7,14 @@ namespace GMall.Types
 {
     public class BrandId : LongGuid
     {
+        public DateTime CreateTime { get; private set; }
         public BrandId()
-        { 
-        }
-        public BrandId(long aValue) : base(aValue)
         {
+            CreateTime = DateTime.Now;
+        }
+        public BrandId(long aValue,DateTime aDateTime) : base(aValue)
+        {
+            CreateTime = aDateTime;
         }
     }
 }

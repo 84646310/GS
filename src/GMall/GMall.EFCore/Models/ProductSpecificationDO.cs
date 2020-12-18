@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GMall.EFCore.Models
+﻿namespace GMall.EFCore
 {
     public class ProductSpecificationDO
     {

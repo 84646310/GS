@@ -6,15 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Product\GMall.Product.Application\GMall.Product.Application.csproj" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\..\Product\GMall.Product.Application\GMall.Product.Application.csproj" />
+    <ProjectReference Include="..\..\Product\GMall.Product.Infrastructure\GMall.Product.Infrastructure.csproj" />
   </ItemGroup>
 
 

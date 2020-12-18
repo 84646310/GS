@@ -32,25 +32,25 @@ namespace GMall.Product.Domain.Products
         {
             var saleProperties = new List<SalePropertyInfo>()
             {
-                new SalePropertyInfo(new PropertyId(1), new List<PropertyValueId>()
+                new SalePropertyInfo(1,new PropertyId(1), new List<PropertyValueId>()
                 {
                      new PropertyValueId(11),
                      new PropertyValueId(12),
                      new PropertyValueId(13)
                 }),
-                new SalePropertyInfo(new PropertyId(2), new List<PropertyValueId>()
+                new SalePropertyInfo(2,new PropertyId(2), new List<PropertyValueId>()
                 {
                      new PropertyValueId(21),
                      new PropertyValueId(22),
                      new PropertyValueId(23)
                 }),
-                new SalePropertyInfo(new PropertyId(3), new List<PropertyValueId>()
+                new SalePropertyInfo(3,new PropertyId(3), new List<PropertyValueId>()
                 {
                      new PropertyValueId(31),
                      new PropertyValueId(32),
                      new PropertyValueId(33)
                 }),
-                new SalePropertyInfo(new PropertyId(4), new List<PropertyValueId>()
+                new SalePropertyInfo(4,new PropertyId(4), new List<PropertyValueId>()
                 {
                      new PropertyValueId(41),
                      new PropertyValueId(42),

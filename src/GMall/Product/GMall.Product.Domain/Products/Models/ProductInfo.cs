@@ -1,18 +1,19 @@
 ﻿using GMall.Types;
+using GS.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GMall.Product.Domain.Products
 {
-    public class ProductInfo
+    public class ProductInfo : ValueObject
     {
         public string Name { get; private set; }
         public string ModelCode { get; private set; }
         public string Description { get; private set; }
         public string Introduction { get; private set; }
         public BrandId BrandId { get; private set; }
-        public CategoryId CategoryId { get; private set; } 
+        public CategoryId CategoryId { get; private set; }
         public ProductInfo(
             string aName,
             string aModelCode,

@@ -12,7 +12,7 @@ namespace GMall.Product.Domain.Brands
         public int Sort { get; private set; }
         public bool Active { get; private set; }
         public ICollection<Picture> Pictures { get; private set; }
-        public Brand(BrandId aId, BrandInfo aInfo, ICollection<Picture> aPictures, int aSort, bool aActive) : base(aId)
+        public Brand(BrandId aBrandId, BrandInfo aInfo, ICollection<Picture> aPictures, int aSort, bool aActive) : base(aBrandId)
         {
             Info = aInfo;
             Pictures = aPictures;

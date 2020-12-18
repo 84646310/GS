@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GMall.Product.Domain.Brands
 {
-    public class BrandInfo : IValueObject
+    public class BrandInfo : ValueObject
     {
         public string Name { get; private set; }
         public string Url { get; private set; }

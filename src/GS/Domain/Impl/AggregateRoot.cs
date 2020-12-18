@@ -4,12 +4,21 @@ using System.Text;
 
 namespace GS.Domain
 {
-    public abstract class AggregateRoot<TAggregateRootId> : IAggregateRoot
+
+    public abstract class AggregateRoot<TAggregateRootUniqueId, TPrimaryKey> : IAggregateRoot<TAggregateRootUniqueId>, ISurrogateId<TPrimaryKey>
     {
-        public TAggregateRootId Id { get; protected set; } 
-        protected AggregateRoot(TAggregateRootId aId)
+        public virtual TPrimaryKey Id { get; protected set; }
+        public virtual TAggregateRootUniqueId UniqueId { get; protected set; }
+        protected AggregateRoot(TAggregateRootUniqueId aAggregateRootUniqueId)
         {
-            Id = aId;
+            UniqueId = aAggregateRootUniqueId;
         }
     }
+    public abstract class AggregateRoot<TAggregateRootUniqueId> : AggregateRoot<TAggregateRootUniqueId, int>
+    {
+        public AggregateRoot(TAggregateRootUniqueId aAggregateRootUniqueId) : base(aAggregateRootUniqueId)
+        {
+        }
+    }
+
 }

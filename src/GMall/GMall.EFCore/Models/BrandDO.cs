@@ -3,6 +3,7 @@
     public class BrandDO
     {
         public long Id { get; set; }
+        public long UniqueId { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public int Sort { get; set; }

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using GMall.WebApi.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +55,11 @@ namespace GMall.WebApi
             {
                 endpoints.MapControllers();
             });
+        }
+
+        public void ConfigureContainer(ContainerBuilder containerBuilder)
+        {
+            containerBuilder.RegisterModule<AutofacConfig>();
         }
     }
 }

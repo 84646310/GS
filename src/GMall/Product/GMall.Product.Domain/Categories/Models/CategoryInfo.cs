@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GMall.Product.Domain.Categories
 {
-    public class CategoryInfo:IValueObject
+    public class CategoryInfo:ValueObject
     {
         public CategoryId ParentId { get; private set; }
         public string Name { get; private set; }

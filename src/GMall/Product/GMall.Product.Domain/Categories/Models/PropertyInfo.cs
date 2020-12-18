@@ -1,11 +1,10 @@
 ﻿using GMall.Types;
-using System;
+using GS.Domain;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GMall.Product.Domain.Categories
 {
-    public class PropertyInfo
+    public class PropertyInfo : ValueObject
     {
         public PropertyId PropertyId { get; private set; }
         public ICollection<PropertyValueId> PropertyValueIds { get; private set; }

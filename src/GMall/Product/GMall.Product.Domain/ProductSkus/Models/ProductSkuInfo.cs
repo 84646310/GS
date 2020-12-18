@@ -1,17 +1,18 @@
 ﻿using GMall.Types;
+using GS.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GMall.Product.Domain.ProductSkus
 {
-    public class ProductSkuInfo
+    public class ProductSkuInfo : ValueObject
     {
         public ProductId ProductId { get; private set; }
         public SpecificationId SpecificationId { get; private set; }
-        public Money UnitPrice { get; private set; } 
+        public Money UnitPrice { get; private set; }
         public PictureId PictureId { get; private set; }
-        public ProductSkuInfo(ProductId aProductId, SpecificationId aSpecificationId, Money aUnitPrice, PictureId aPictureId)  
+        public ProductSkuInfo(ProductId aProductId, SpecificationId aSpecificationId, Money aUnitPrice, PictureId aPictureId)
         {
             ProductId = aProductId;
             SpecificationId = aSpecificationId;

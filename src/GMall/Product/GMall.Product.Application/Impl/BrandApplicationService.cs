@@ -23,9 +23,10 @@ namespace GMall.Product.Application
 
         public async Task<BrandDTO> Get(long id)
         {
-            var entity = await brandRepository.GetByIdAsync(new Types.BrandId(id));
-            var result = brandAssembler.ToDTO(entity);
-            return result;
+            //var entity = await brandRepository.GetByIdAsync(new Types.BrandId(id));
+            //var result = brandAssembler.ToDTO(entity);
+            //return result;
+            return null;
         }
     }
 }

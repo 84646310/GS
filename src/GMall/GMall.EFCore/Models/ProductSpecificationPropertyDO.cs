@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GMall.EFCore.Models
+﻿namespace GMall.EFCore
 {
     public class ProductSpecificationPropertyDO
     {
+        public int Id { get; set; }
         public long ProductId { get; set; }
         public long SpecificationId { get; set; }
         public long PropertyId { get; set; }
