@@ -1,8 +1,7 @@
 ﻿namespace GMall.EFCore
 {
-    public class PropertyDO
+    public class PropertyDO : BaseDO<int>
     {
-        public long Id { get; set; }
         public string Name { get; set; }
         public int Sort { get; set; }
     }

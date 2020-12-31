@@ -1,12 +1,12 @@
-﻿namespace GMall.EFCore 
+﻿namespace GMall.EFCore
 {
-    public class BrandDO
+    public class BrandDO : BaseDO<int>
     {
-        public long Id { get; set; }
-        public long UniqueId { get; set; }
+        public string UId { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public int Sort { get; set; }
-        public bool Active { get; set; }
+        public bool Enabled { get; set; }
     }
+    
 }

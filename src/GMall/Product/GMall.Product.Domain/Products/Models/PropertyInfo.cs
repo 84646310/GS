@@ -12,7 +12,13 @@ namespace GMall.Product.Domain.Products
         public PropertyValueId PropertyValueId { get; private set; }
         public string PropertyValue { get; private set; }
         public PropertyInfo(
-            int aUniqueId, PropertyId aPropertyId, PropertyValueId aPropertyValueId, string aPropertyValue) : base(aUniqueId)
+            int aId, PropertyId aPropertyId, PropertyValueId aPropertyValueId, string aPropertyValue) : base(aId)
+        {
+            PropertyId = aPropertyId;
+            PropertyValueId = aPropertyValueId;
+            PropertyValue = aPropertyValue;
+        }
+        public void Update(PropertyId aPropertyId, PropertyValueId aPropertyValueId, string aPropertyValue)
         {
             PropertyId = aPropertyId;
             PropertyValueId = aPropertyValueId;

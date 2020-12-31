@@ -11,7 +11,7 @@ namespace GMall.Product.Application
         {
             var result = new BrandDTO()
             {
-                Id = aBrand.Id,
+                Name = aBrand.Info.Name
             };
             return result;
         }

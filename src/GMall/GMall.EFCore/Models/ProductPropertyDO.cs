@@ -1,8 +1,7 @@
 ﻿namespace GMall.EFCore
 {
-    public class ProductPropertyDO
-    {
-        public int Id { get; set; }
+    public class ProductPropertyDO : BaseDO<int>
+    { 
         public long ProductId { get; set; }
         public long PropertyId { get; set; }
         public long PropertyValueId { get; set; }

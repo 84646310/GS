@@ -12,11 +12,15 @@ namespace GMall.Product.Domain.PropertyValues
         public int Sort { get; private set; }
         public PropertyValue(PropertyValueId aId, string aName, int aSort) : base(aId)
         {
+            if (string.IsNullOrWhiteSpace(aName))
+                throw new ArgumentException("属性值名称不能为空");
             Name = aName;
             Sort = aSort;
         }
         public void Update(string aName)
         {
+            if (string.IsNullOrWhiteSpace(aName))
+                throw new ArgumentException("属性值名称不能为空");
             Name = aName;
         }
         public void UpdateSort(int aSort)

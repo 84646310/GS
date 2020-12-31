@@ -1,14 +1,17 @@
 ﻿using GS.Domain;
+using System;
 
 namespace GMall.Types
 {
-    public class SpecificationId : LongGuid
+    public class SpecificationId : ValueObject
     {
-        public SpecificationId()
+        public Guid Value { get; private set; }
+        public SpecificationId() => Value = Guid.NewGuid();
+        public SpecificationId(Guid aValue)
         {
-        }
-        public SpecificationId(long aValue) : base(aValue)
-        {
+            if (aValue.Equals(Guid.Empty))
+                throw new ArgumentException($"{GetType().Name}不能为空");
+            Value = aValue;
         }
     }
 }

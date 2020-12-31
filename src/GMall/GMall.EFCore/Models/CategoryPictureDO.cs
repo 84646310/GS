@@ -1,10 +1,14 @@
-﻿namespace GMall.EFCore
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace GMall.EFCore
 {
-    public class CategoryPictureDO
+    public class CategoryPictureDO : BaseDO<int>
     {
-        public int Id { get; set; }
         public int CategoryId { get; set; }
+        public int UId { get; set; }
+        public string PictureId { get; set; }
         public int UseType { get; set; }
-        public long PictureId { get; set; }
     }
 }

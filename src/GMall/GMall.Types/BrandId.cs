@@ -1,20 +1,17 @@
 ﻿using GS.Domain;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GMall.Types
 {
-    public class BrandId : LongGuid
+    public class BrandId : ValueObject
     {
-        public DateTime CreateTime { get; private set; }
-        public BrandId()
+        public Guid Value { get; private set; }
+        public BrandId() => Value = Guid.NewGuid();
+        public BrandId(Guid aValue)
         {
-            CreateTime = DateTime.Now;
-        }
-        public BrandId(long aValue,DateTime aDateTime) : base(aValue)
-        {
-            CreateTime = aDateTime;
+            if (aValue.Equals(Guid.Empty))
+                throw new ArgumentException("Id不能为空");
+            Value = aValue;
         }
     }
 }

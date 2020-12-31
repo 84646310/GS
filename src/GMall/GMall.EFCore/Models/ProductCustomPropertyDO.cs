@@ -1,10 +1,10 @@
 ﻿namespace GMall.EFCore
 {
-    public class ProductCustomPropertyDO
+    public class ProductCustomPropertyDO : BaseDO<int>
     {
-        public int Id { get; set; }
-        public long ProductId { get; set; }
-        public long PropertyId { get; set; }
+        public string UId { get; set; }
+        public string ProductId { get; set; }
+        public string PropertyId { get; set; }
         public string PropertyValue { get; set; }
     }
 }

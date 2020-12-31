@@ -1,17 +1,17 @@
 ﻿using GS.Domain;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GMall.Types
 {
-    public class PropertyValueId : LongGuid
+    public class PropertyValueId : ValueObject
     {
-        public PropertyValueId()
+        public Guid Value { get; private set; }
+        public PropertyValueId() => Value = Guid.NewGuid();
+        public PropertyValueId(Guid aValue)
         {
-        }
-        public PropertyValueId(long aValue) : base(aValue)
-        {
+            if (aValue.Equals(Guid.Empty))
+                throw new ArgumentException($"{GetType().Name}不能为空");
+            Value = aValue;
         }
     }
 }

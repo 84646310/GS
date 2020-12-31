@@ -1,10 +1,9 @@
 ﻿namespace GMall.EFCore
 {
-    public class CategoryPropertyValueDO
+    public class CategoryPropertyValueDO : BaseDO<int>
     {
-        public int Id { get; set; }
-        public long CategoryId { get; set; }
-        public long PropertyId { get; set; }
-        public long PropertyValueId { get; set; }
+        public int CategoryId { get; set; }
+        public int CategoryPropertyId { get; set; } 
+        public string PropertyValueId { get; set; }
     }
 }

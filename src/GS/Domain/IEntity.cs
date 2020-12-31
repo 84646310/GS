@@ -9,6 +9,6 @@ namespace GS.Domain
     }
     public interface IEntity<TEntityId> : IEntity
     {
-        TEntityId UniqueId { get; }
+        TEntityId UId { get; }
     }
 }

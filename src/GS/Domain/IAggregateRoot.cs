@@ -7,8 +7,8 @@ namespace GS.Domain
     public interface IAggregateRoot
     {
     }
-    public interface IAggregateRoot<TAggregateRootUniqueId> : IAggregateRoot
+    public interface IAggregateRoot<TAggregateRootId> : IAggregateRoot
     {
-        TAggregateRootUniqueId UniqueId { get; }
+        TAggregateRootId UId { get; }
     }
 }

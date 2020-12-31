@@ -4,19 +4,16 @@ using System.Text;
 
 namespace GS.Domain
 {
-    public abstract class Entity<TEntityUniqueId, TPrimaryKey> : IEntity<TEntityUniqueId>, ISurrogateId<TPrimaryKey>
+    public abstract class Entity : IEntity
     {
-        public virtual TPrimaryKey Id { get; protected set; }
-        public virtual TEntityUniqueId UniqueId { get; protected set; } 
-        protected Entity(TEntityUniqueId aTEntityUniqueId)
-        {
-            UniqueId = aTEntityUniqueId;
-        }
     }
-    public abstract class Entity<TEntityUniqueId> : Entity<TEntityUniqueId, int>
+    public abstract class Entity<TEntityId> : IEntity<TEntityId>
     {
-        public Entity(TEntityUniqueId aEntityUniqueId) : base(aEntityUniqueId)
+        public virtual TEntityId UId { get; protected set; }
+        public Entity(TEntityId aEntityId)
         {
+            UId = aEntityId;
         }
+
     }
 }

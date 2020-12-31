@@ -1,18 +1,17 @@
 ﻿using GS.Domain;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GMall.Types
 {
-    public class PictureId : LongGuid
+    public class PictureId : ValueObject
     {
-        public PictureId()
+        public Guid Value { get; private set; }
+        public PictureId() => Value = Guid.NewGuid();
+        public PictureId(Guid aValue)
         {
-
-        }
-        public PictureId(long aValue) : base(aValue)
-        { 
+            if (aValue.Equals(Guid.Empty))
+                throw new ArgumentException($"{GetType().Name}不能为空");
+            Value = aValue;
         }
     }
 }

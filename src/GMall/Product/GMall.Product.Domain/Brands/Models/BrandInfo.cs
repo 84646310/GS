@@ -13,10 +13,12 @@ namespace GMall.Product.Domain.Brands
         public BrandInfo(string aName, string aUrl)
         {
             if (string.IsNullOrWhiteSpace(aName))
-                throw new ArgumentException("名称不能为空"); 
+                throw new ArgumentException("品牌名称不能为空");
+            if (aName.Length > 50)
+                throw new ArgumentException("品牌名称长度不能超过50"); 
 
             Name = aName;
-            Url = aUrl; 
+            Url = aUrl;
         }
     }
 }

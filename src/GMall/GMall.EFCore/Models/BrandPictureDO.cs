@@ -1,10 +1,10 @@
 ﻿namespace GMall.EFCore
 {
-    public class BrandPictureDO
+    public class BrandPictureDO : BaseDO<int>
     {
-        public int Id { get; set; }
-        public long BrandId { get; set; }
-        public long PictureId { get; set; }
+        public int BrandId { get; set; }
+        public int UId { get; set; }
+        public string PictureId { get; set; }
         public int UseType { get; set; }
     }
 }

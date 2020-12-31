@@ -1,15 +1,17 @@
 ﻿using GS.Domain;
+using System;
 
 namespace GMall.Types
 {
-    public class CategoryId : LongGuid
+    public class CategoryId : ValueObject
     {
-        public CategoryId()
+        public Guid Value { get; private set; }
+        public CategoryId() => Value = Guid.NewGuid();
+        public CategoryId(Guid aValue)
         {
-
-        }
-        public CategoryId(long aValue):base(aValue)
-        { 
+            if (aValue.Equals(Guid.Empty))
+                throw new ArgumentException($"{GetType().Name}不能为空");
+            Value = aValue;
         }
     }
 }

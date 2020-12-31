@@ -17,7 +17,7 @@ namespace GMall.Product.Infrastructure.Brands
             _context = context;
         }
 
-        public Task<Brand> GetByIdAsync(BrandId aAggregateRootId)
+        public Task<Brand> GetAsync(BrandId aAggregateRootId)
         {
             throw new System.NotImplementedException();
         }
@@ -27,17 +27,7 @@ namespace GMall.Product.Infrastructure.Brands
             throw new System.NotImplementedException();
         }
 
-        public Task<BrandId> NextIdAsync()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Task SaveAsync(Brand aAggregateRoot)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task SaveAsync(IList<Brand> aAggregateRoot)
         {
             throw new System.NotImplementedException();
         }

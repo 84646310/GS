@@ -12,7 +12,11 @@ namespace GMall.Product.Domain.Products
         private string JsonString { get; set; }
         public Specification(SpecificationId aId, ICollection<KeyValuePair<PropertyId, PropertyValueId>> aProperties) : base(aId)
         {
-            Properties = aProperties; 
+            Properties = aProperties;
+        }
+        public void Update(ICollection<KeyValuePair<PropertyId, PropertyValueId>> aProperties)
+        {
+            Properties = aProperties;
         }
         public string ToJson()
         {

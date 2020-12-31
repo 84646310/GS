@@ -10,7 +10,12 @@ namespace GMall.Product.Domain.Products
     {
         public PropertyId PropertyId { get; private set; }
         public string PropertyValue { get; private set; }
-        public CustomPropertyInfo(int aUniqueId, PropertyId aPropertyId, string aPropertyValue) : base(aUniqueId)
+        public CustomPropertyInfo(int aId, PropertyId aPropertyId, string aPropertyValue) : base(aId)
+        {
+            PropertyId = aPropertyId;
+            PropertyValue = aPropertyValue;
+        }
+        public void Update( PropertyId aPropertyId, string aPropertyValue) 
         {
             PropertyId = aPropertyId;
             PropertyValue = aPropertyValue;

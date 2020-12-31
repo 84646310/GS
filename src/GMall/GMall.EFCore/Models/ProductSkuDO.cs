@@ -1,8 +1,7 @@
 ﻿namespace GMall.EFCore
 {
-    public class ProductSkuDO
+    public class ProductSkuDO : BaseDO<int>
     {
-        public long Id { get; set; }
         public long ProductId { get; set; }
         public long SpecificationId { get; set; }
         public decimal UnitPrice { get; set; }

@@ -30,33 +30,33 @@ namespace GMall.Product.Domain.Products
         }
         public Product(ProductId aId) : base(aId)
         {
-            var saleProperties = new List<SalePropertyInfo>()
-            {
-                new SalePropertyInfo(1,new PropertyId(1), new List<PropertyValueId>()
-                {
-                     new PropertyValueId(11),
-                     new PropertyValueId(12),
-                     new PropertyValueId(13)
-                }),
-                new SalePropertyInfo(2,new PropertyId(2), new List<PropertyValueId>()
-                {
-                     new PropertyValueId(21),
-                     new PropertyValueId(22),
-                     new PropertyValueId(23)
-                }),
-                new SalePropertyInfo(3,new PropertyId(3), new List<PropertyValueId>()
-                {
-                     new PropertyValueId(31),
-                     new PropertyValueId(32),
-                     new PropertyValueId(33)
-                }),
-                new SalePropertyInfo(4,new PropertyId(4), new List<PropertyValueId>()
-                {
-                     new PropertyValueId(41),
-                     new PropertyValueId(42),
-                     new PropertyValueId(43)
-                }),
-            };
+            //var saleProperties = new List<SalePropertyInfo>()
+            //{
+            //    new SalePropertyInfo(1,new PropertyId(1), new List<PropertyValueId>()
+            //    {
+            //         new PropertyValueId(11),
+            //         new PropertyValueId(12),
+            //         new PropertyValueId(13)
+            //    }),
+            //    new SalePropertyInfo(2,new PropertyId(2), new List<PropertyValueId>()
+            //    {
+            //         new PropertyValueId(21),
+            //         new PropertyValueId(22),
+            //         new PropertyValueId(23)
+            //    }),
+            //    new SalePropertyInfo(3,new PropertyId(3), new List<PropertyValueId>()
+            //    {
+            //         new PropertyValueId(31),
+            //         new PropertyValueId(32),
+            //         new PropertyValueId(33)
+            //    }),
+            //    new SalePropertyInfo(4,new PropertyId(4), new List<PropertyValueId>()
+            //    {
+            //         new PropertyValueId(41),
+            //         new PropertyValueId(42),
+            //         new PropertyValueId(43)
+            //    }),
+            //};
         } 
         public void CreateSpecifications()
         {

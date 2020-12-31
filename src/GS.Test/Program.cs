@@ -8,6 +8,16 @@ namespace GS.Test
     {
         static void Main(string[] args)
         {
+
+            var dateNow = DateTime.Now.Date.AddDays(-1);
+
+            var beforeDay30 = dateNow.AddDays(-30);
+            if (dateNow.Day != 1)
+                beforeDay30 = dateNow.AddDays(-29);
+
+
+            Guid aValue = Guid.Empty;
+            
             //Product p = new Product(new GMall.Types.ProductId(1));
             //p.CreateSpecification();
 
